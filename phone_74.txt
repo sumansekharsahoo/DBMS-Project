@@ -1,0 +1,53 @@
+insert into phone_74 values('siddharthm', 9345478301);
+insert into phone_74 values('siddharthm', 9674278690);
+insert into phone_74 values('tanya_09', 9168672678);
+insert into phone_74 values('tanya_09', 9845743885);
+insert into phone_74 values('manojp', 9958369723);
+insert into phone_74 values('manojp', 9213590157);
+insert into phone_74 values('manojp', 9124560893);
+insert into phone_74 values('reena.s', 9874563215);
+insert into phone_74 values('reena.s', 9658742130);
+insert into phone_74 values('vivek.ahuja', 9156478231);
+insert into phone_74 values('vivek.ahuja', 9784523698);
+insert into phone_74 values('ananya_mishra', 9538746210);
+insert into phone_74 values('ananya_mishra', 9825637410);
+insert into phone_74 values('ananya_mishra', 9197548230);
+insert into phone_74 values('ankitk', 9442168753);
+insert into phone_74 values('aarti.singh', 9713586240);
+insert into phone_74 values('aarti.singh', 9598731240);
+insert into phone_74 values('tanvi_s', 9441765230);
+insert into phone_74 values('tanvi_s', 9964571382);
+insert into phone_74 values('tanvi_s', 9568734120);
+insert into phone_74 values('abhijeet.j', 9661347820);
+insert into phone_74 values('abhijeet.j', 9457682130);
+insert into phone_74 values('abhijeet.j', 9726458301);
+insert into phone_74 values('poonam.k', 9821765430);
+insert into phone_74 values('poonam.k', 9187456301);
+insert into phone_74 values('rahul_g', 9945216387);
+insert into phone_74 values('priya_b', 9764128305);
+insert into phone_74 values('mohit.g', 9287413650);
+insert into phone_74 values('pooja_s', 9261548378);
+insert into phone_74 values('ankita_r', 9734258601);
+insert into phone_74 values('ankita_r', 9976843210);
+insert into phone_74 values('rishabh.m', 9251784630);
+insert into phone_74 values('rishabh.m', 9587432610);
+insert into phone_74 values('rishabh.m', 9874152360);
+insert into phone_74 values('sakshi_k', 9558742130);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

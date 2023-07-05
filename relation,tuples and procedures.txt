@@ -1,0 +1,132 @@
+create table user_74(username varchar(20) primary key,pwd varchar(20),aadhar varchar(15),name varchar(20),age int,door varchar(5),street varchar(20),state varchar(20),pincode int,dba char(1),manager char(1),owner char(1),tenant char(1));
+
+create table allproperties_74(propertyid int primary key,owner varchar(20),availto date,availfrom date,rentpm int,annualhike int,totalarea int,plintharea int,bedrooms int,floors int,yearofconstruction int,door varchar(5),state varchar(20),pincode int,sold char(1),residential char(1));
+
+create table rentedproperties_74(propertyid int,tenantid varchar(20),agencycommission int,enddate date,startdate date,active char(1),primary key(propertyid,startdate));
+
+alter table allproperties_74 add constraint ap_74 foreign key (owner) references user_74(username);
+
+alter table rentedproperties_74 add constraint rp_74_ap foreign key (propertyid) references allproperties_74(propertyid);
+
+alter table rentedproperties_74 add constraint rp_74_ foreign key (tenantid) references user_74(username);
+
+create table phone_74(userid varchar(20),phonenumber int,primary key(userid,phonenumber));
+
+alter table phone_74 add constraint p_74 foreign key (userid) references user_74(username);
+
+
+
+
+
+
+New Property(3)
+
+create or replace procedure InsertpropertyRecord( id in number, owner in varchar2,availfrom in date,availto in date,rentpm in number,annualhike in number,totalarea in number,plintharea in number,bedrooms in number,floors in number,yearofconstruction in number,door in varchar2,state in varchar2,pincode in number,sold in char, residental in char)as
+begin
+insert into allproperties_74 values(id , owner ,availfrom ,availto ,rentpm ,annualhike ,totalarea ,plintharea ,bedrooms ,floors ,yearofconstruction ,door ,state ,pincode ,sold , residental );
+end;
+/
+exec InsertpropertyRecord(201223,'ashok78',to_date('11-04-2023',MM-DD-YYYY),to_date('04-03-2023',MM-DD-YYYY),2000,100,1000,500,3,5,2000,'12b','tamilnadu',600042,'Y','Y');
+
+
+
+Get property info(4)
+
+create or replace procedure get_propertyinfo_ownerid(ownerid in varchar2) as
+cursor c1
+is
+select * from allproperties_74 where owner=ownerid;
+rec1 c1%rowtype;
+begin
+for rec1 in c1 loop
+dbms_output.put_line(rec1.propertyid ||' '||rec1.owner||' '||rec1.availto||' '||rec1.availfrom||' '||rec1.rentpm||' '||rec1.annualhike||' '||rec1.totalarea||' '||rec1.plintharea||' '||rec1.bedrooms||' '||rec1.floors||' '||rec1.yearofconstruction||' '||rec1.door||' '||rec1.state ||' '||rec1.pincode||' '||rec1.sold||' '||rec1.residential);
+end loop;
+end;
+/
+exec get_propertyinfo_ownerid('siddharthm');
+
+
+
+
+
+Get tenant details(5)
+
+create or replace procedure GetTenantDetails(idn in int) as
+cursor c1
+is
+select * from user_74 where username in (select owner from allproperties_74 where propertyid = idn);
+cursor c2
+is
+select * from phone_74 where userid in (select owner from allproperties_74 where propertyid = idn);
+rec1 c1%rowtype;
+rec2 c2%rowtype;
+begin
+for rec1 in c1 loop
+dbms_output.put_line('tenant name is '||rec1.name||' aadhar no. : '||rec1.aadhar);
+for rec2 in c2 loop
+dbms_output.put_line('phone number is : '||rec2.phonenumber);
+end loop;
+end loop;
+end;
+/
+exec GetTenantDetails(6);
+
+
+
+
+New User(6)
+
+create or replace procedure insert_userinfo( i_username in varchar2 ,  i_pwd in varchar2 , i_aadhar in Varchar2 , i_name in Varchar2 ,i_age in int, i_door in varchar , i_street in varchar2 , i_state in varchar2 , i_pincode  in int, i_dba in char,i_manager in char , i_owner in char, i_tenant in char) as
+     begin
+    insert into user_74 values (i_username,i_pwd,i_aadhar,  i_name,i_age,i_door,i_street,i_state, i_pincode,i_dba,i_manager,i_owner,i_tenant);
+     end;
+/
+exec insert_userinfo('Ragu4','R4123','1234365728','Ragu',24, '4b','gopal street','tamilnadu',600042,'N','N','Y','N');
+
+
+
+
+
+
+Get propety from location(7)
+
+create or replace procedure get_propertyinfo_loc(location in  varchar2) as
+cursor c1
+is
+select * from allproperties_74 where state=location;
+rec1 c1%rowtype;
+begin
+for rec1 in c1 loop
+dbms_output.put_line(rec1.propertyid ||' '||rec1.owner||' '||rec1.availto||' '||rec1.availfrom||' '||rec1.rentpm||' '||rec1.annualhike||' '||rec1.totalarea||' '||rec1.plintharea||' '||rec1.bedrooms||' '||rec1.floors||' '||rec1.yearofconstruction||' '||rec1.door||' '||rec1.state ||' '||rec1.pincode||' '||rec1.sold||' '||rec1.residential);
+end loop;
+end;
+/
+exec get_propertyinfo_loc('Kerala');
+
+
+Get Rented history(8)
+
+create or replace procedure get_rentedpropertyinfo_propertyid(property_id in int) as
+cursor c1
+is
+select * from rentedproperties_74 where propertyid=property_id;
+rec1 c1%rowtype;
+begin
+for rec1 in c1 loop
+dbms_output.put_line(rec1.tenantid||' '||rec1.startdate||' '||rec1.enddate);
+end loop;
+end;
+/
+exec get_rentedpropertyinfo_propertyid(11);
+
+
+
+
+
+
+
+
+
+
+
+

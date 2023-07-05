@@ -1,0 +1,12 @@
+insert into rentedproperties_74 values(2, 'tanvi_s', 15, TO_DATE('09-02-2022', 'MM-DD-YYYY'), TO_DATE('09-01-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(5, 'abhijeet.j', 10, TO_DATE('10-16-2022', 'MM-DD-YYYY'), TO_DATE('10-15-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(11, 'poonam.k', 15, TO_DATE('09-30-2022', 'MM-DD-YYYY'), TO_DATE('09-29-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(13, 'rahul_g', 12, TO_DATE('10-27-2022', 'MM-DD-YYYY'), TO_DATE('10-26-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(14, 'priya_b', 10, TO_DATE('07-07-2022', 'MM-DD-YYYY'), TO_DATE('07-06-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(18, 'mohit.g', 13, TO_DATE('05-03-2022', 'MM-DD-YYYY'), TO_DATE('05-02-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(19, 'pooja_s', 15, TO_DATE('07-11-2022', 'MM-DD-YYYY'), TO_DATE('10-07-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(23, 'ankita_r', 16, TO_DATE('11-09-2022', 'MM-DD-YYYY'), TO_DATE('11-08-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(24, 'ankita_r', 14, TO_DATE('06-08-2022', 'MM-DD-YYYY'), TO_DATE('06-07-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(25, 'rishabh.m', 13, TO_DATE('09-05-2022', 'MM-DD-YYYY'), TO_DATE('09-04-2023', 'MM-DD-YYYY'), 'Y');
+insert into rentedproperties_74 values(26, 'sakshi_k', 15, TO_DATE('11-24-2022', 'MM-DD-YYYY'), TO_DATE('11-23-2023', 'MM-DD-YYYY'), 'Y');
+
